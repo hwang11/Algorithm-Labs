@@ -1,12 +1,12 @@
 package level4;
 
 import java.util.Scanner;
-//미완 90점.
 public class tetris {
 	static int c, r, cnt, num,cnt2,cnt3;
 	static int map[][], map2[][];
 	static boolean flag;
 
+	//cnt2 는 실패케이스의 개수 
 	public static int check() { //몇 줄의 수평선 메우는지 
 		num = cnt = 0;
 		for (int i = r - 1; i >= 0; i--) {
@@ -77,9 +77,9 @@ public class tetris {
 		int b, ans;
 		b = ans = cnt2 = 0;
 		for (int i = 0; i < c; i++) {
-			if(map[0][i] == 1) {
-				flag = false;
-				break;
+			if(map[0][i] == 1) { //첫번째가 1이면 아예 돌아보지도 않고 false처리해버려서 틀림. 
+				cnt2++;
+				continue;
 			}
 			fill(i);
 			b = check();

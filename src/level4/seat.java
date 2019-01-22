@@ -32,12 +32,12 @@ public class seat {
 			if(r1 <= 0) break;
 
 		}
-		for(int o=0;o<r;o++) {
-			for(int y=0;y<c;y++) {
-				System.out.print(a[o][y]+" ");
-			}
-			System.out.println();
-		}
+//		for(int o=0;o<r;o++) {
+//			for(int y=0;y<c;y++) {
+//				System.out.print(a[o][y]+" ");
+//			}
+//			System.out.println();
+//		}
 		for(int o=0;o<r;o++) {
 			for(int y=0;y<c;y++) {
 				if(a[o][y] == num) {
@@ -45,7 +45,9 @@ public class seat {
 				}
 			}
 		}
-
+		if(r*c<num) {
+			System.out.println(0);
+		}
 		
 	}
 }
